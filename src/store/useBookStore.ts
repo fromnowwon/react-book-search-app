@@ -5,6 +5,8 @@ interface BookStore {
   setQuery: (query: string) => void;
   currentPage: number;
   setCurrentPage: (page: number) => void;
+  pageSize: number;
+  setPageSize: (size: number) => void;
 }
 
 export const useBookStore = create<BookStore>((set) => ({
@@ -12,4 +14,6 @@ export const useBookStore = create<BookStore>((set) => ({
   setQuery: (query) => set({ query }),
   currentPage: 1,
   setCurrentPage: (page) => set({ currentPage: page }),
+  pageSize: 10,
+  setPageSize: (size) => set({ pageSize: size }),
 }));
